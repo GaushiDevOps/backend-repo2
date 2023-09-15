@@ -16,7 +16,7 @@ jobs:
         with:
           owner: GaushiDevOps
           repo: frontend-repo1
-          github_token: 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
+          github_token: 11BBPU43Q0romfXbeeePlz_eVKSAPT7RkuNoU5riUUAnonCjSWgYCmji1PzOwljLeNBGZDY7469XjO6Hjp
           workflow_file_name: deploy.yaml
       - name: Deploy Web App
         run: |
