@@ -1,0 +1,17 @@
+name: My Repo2 Workflow
+on:
+  repository_dispatch:
+    types:
+      - trigger-repo2-event
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Sumne
+        shell: bash
+        run: echo"Wassup"
+      
