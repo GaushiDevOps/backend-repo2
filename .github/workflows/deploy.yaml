@@ -14,9 +14,9 @@ jobs:
           sleep 10s
       - uses: convictional/trigger-workflow-and-wait@v1.3.0
         with:
-          owner: keithweaver
-          repo: demo-web-api
-          github_token: ${{ secrets.G_ACCESS_TOKEN }}
+          owner: GaushiDevOps
+          repo: frontend-repo1
+          github_token: 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
           workflow_file_name: deploy.yml
       - name: Deploy Web App
         run: |
