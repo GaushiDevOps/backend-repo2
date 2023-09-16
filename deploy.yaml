@@ -1,12 +1,17 @@
-name: Repository Dispatch
+# automation repo
+name: Run the Workflow automatically
 on:
   repository_dispatch:
     types: [my-event]
 jobs:
-  myEvent:
+  build:
+    name: run-workflow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
+          fetch-depth: 0
+      - name: print trigger details
+        run: |
+          echo ${{ github.event.client_payload.github.action }}
+          echo ${{ github.event.client_payload.github.actor }}
