@@ -1,17 +1,12 @@
-name: My Repo2 Workflow
+name: Repository Dispatch
 on:
   repository_dispatch:
-    types:
-      - trigger-repo2-event
-
+    types: [my-event]
 jobs:
-  my-job:
+  myEvent:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Sumne
-        shell: bash
-        run: echo"Wassup"
-      
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
